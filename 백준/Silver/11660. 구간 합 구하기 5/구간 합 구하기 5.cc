@@ -12,10 +12,9 @@ int main()
     cin >> N;
     cin >> M;
 
-    std::vector<std::vector<int>> nums(N + 1, std::vector<int>(N + 1, 0));
     std::vector<std::vector<int>> prefixsum(N + 1, std::vector<int>(N + 1, 0));
 
-    // 원 배열과 prefix sum 배열 저장
+    // prefix sum 배열 저장
     int temp = 0;
 
     for (int i = 1; i <= N; i++)
