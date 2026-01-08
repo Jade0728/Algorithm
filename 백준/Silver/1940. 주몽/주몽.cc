@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <vector>
+#include <algorithm>
 // 1940 투포인터
 int main()
 {
@@ -10,31 +11,37 @@ int main()
 
     int N, M;
     cin >> N >> M;
-    vector<long long> nums(N + 1);
+    vector<int> nums(N, 0);
 
     for (int i = 0; i < N; i++)
     {
         cin >> nums[i];
     }
-    // 갑옷은 두개의 재료로만 구성, 그 번호 합이 합쳐서 M이 되어야함
-    int pos1, pos2;
-    int sum = 0;
+
+    // 오름차순 정렬
+    sort(nums.begin(), nums.end());
+
+    int pos1 = 0;
+    int pos2 = N - 1;
     int res = 0;
-    for (int i = 0; i < N; i++)
+
+    while (pos1 < pos2)
     {
-        pos1 = i;
-        pos2 = i + 1;
-        while (pos2 < N)
+        if (nums[pos1] + nums[pos2] == M)
         {
-            sum = nums[pos1] + nums[pos2];
-            if (sum == M)
-            {
-                res++;
-            }
-            pos2++;
+            res++;
+            pos2--;
+            pos1++;
+        }
+        else if (nums[pos1] + nums[pos2] > M)
+        {
+            pos2--;
+        }
+        else
+        {
+            pos1++;
         }
     }
-
-    printf("%d\n", res);
+    cout << res;
     return 0;
 }
