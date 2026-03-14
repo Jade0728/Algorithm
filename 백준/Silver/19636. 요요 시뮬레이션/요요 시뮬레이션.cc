@@ -67,17 +67,13 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
     
-    //initial 값
+    //다이어트 이전 값
     int iW; //initial weight
-    int iI;    int iL;    int iA;
+    int iI;    int iL;  
     
     //다이어트 이후 값
-    int W;    int I;    
-    int L;    int A;
-    
+    int I;    int A;
     int T;    int D;
-    
-    string res="";
     
     //입력
     cin >> iW >> iI >> T;
@@ -87,11 +83,11 @@ int main()
     cin >> D >> I>> A;
     
     //첫번째 출력
-    W= notConsider(iW, D, iL, A, I);
+    int W= notConsider(iW, D, iL, A, I);
     
     
     //두번째 출력
-    consider(iW, D, iL,A, I, T, W);
+    consider(iW, D, iL, A, I, T, W);
     
 
     return 0;
