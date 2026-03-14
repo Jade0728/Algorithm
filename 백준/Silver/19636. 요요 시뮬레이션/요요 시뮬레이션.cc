@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <iostream>
 #include <cmath>
@@ -64,6 +63,7 @@ int notConsider(int iW, int D, int iL, int A, int I){
 
 int main()
 {
+    ios::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     
