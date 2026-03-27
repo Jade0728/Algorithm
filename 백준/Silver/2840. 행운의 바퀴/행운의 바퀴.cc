@@ -38,8 +38,8 @@ int main()
         cin >> alphbet;
         
         index+=num;
-        while(index >= n){
-            index-=n;
+        if(index >= n){
+            index=index%n; 
         }
         
         if(luck[index]=="?"){
